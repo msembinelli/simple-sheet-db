@@ -1,0 +1,3 @@
+[submodule "sjcl-google-apps-script"]
+	path = sjcl-google-apps-script
+	url = git@github.com:msembinelli/sjcl-google-apps-script.git
