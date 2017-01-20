@@ -59,11 +59,16 @@ var SimpleSheetDb = function(sheetName, userPassword) {
       return false;
     }
     // Search and return the row index that contains the key value pair
-    var columnValues = this.sheet.getRange(1, 1, this.sheet.getLastRow()).getValues();
-    for (var i=0; i<columnValues.length; i++) {
-      if (columnValues[i] == key) {
-        return i + 1;
+    try {
+      var columnValues = this.sheet.getRange(1, 1, this.sheet.getLastRow()).getValues();
+      for (var i=0; i<columnValues.length; i++) {
+        if (columnValues[i] == key) {
+          return i + 1;
+        }
       }
+    }
+    catch(e) {
+      return false;
     }
     return false;
   }
